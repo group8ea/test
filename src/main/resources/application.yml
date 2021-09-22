@@ -7,9 +7,9 @@ spring:
       password: 123456
   datasource:
     driverClassName: org.postgresql.Driver
-    username: severinlawson
-    password: severino94
-    url: jdbc:postgresql://localhost:5432/dbappointment
+    username: lwhctxsbsuzvso
+    password: 6b025fa29eb7e8e48dd9694bb615f6281025cced49c2fc0f5e70967299ea0752
+    url: jdbc:postgresql://ec2-23-20-208-173.compute-1.amazonaws.com:5432/dcvm369np7oc5v
   hikari:
       maximumPoolSize: 10
   jpa:
