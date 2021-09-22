@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: AppointmentSystem
+  security:
+    user:
+      name: username
+      password: 123456
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: severinlawson
+    password: severino94
+    url: jdbc:postgresql://localhost:5432/dbappointment
+  hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: false
+    generation-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    database: postgresql
+  sql:
+    init:
+      mode: always
+
+logging:
+  file:
+    name: /Coding/Logging/${spring.application.name}/log
+server:
+  port: 8080

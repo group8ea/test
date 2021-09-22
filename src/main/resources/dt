@@ -1,0 +1,69 @@
+insert into category values (1,31,'TM Checking');
+insert into category values (2,60,'Car Wash');
+insert into category values (3,15,'TM Checking');
+insert into category values (4,15,'Doctor');
+insert into category values (5,15,'Meeting');
+insert into category values (6,20,'Meeting');
+insert into category values (7,15,'Meeting');
+insert into category values (8,15,'Meeting');
+
+
+
+insert into appointment values (1,'2019-09-24','Fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',1, 1,1);
+insert into appointment values (2,'2019-09-30','Ottumwa', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',2, 2,2);
+insert into appointment values (3,'2019-10-02','Cedar Rapids', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',3, 3,3);
+insert into appointment values (4,'2019-10-03','Iowa City', 'IA', 'US', '1000 N 4th st', '52557',  '8:10',4, 3,4);
+insert into appointment values (5,'2019-10-04','Burllington', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,5);
+insert into appointment values (6,'2019-10-05','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,6);
+insert into appointment values (7,'2019-10-06','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '4:10',5, 3,7);
+insert into appointment values (8,'2019-10-07','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,8);
+insert into appointment values (9,'2019-10-08','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '6:10',5, 3,9);
+insert into appointment values (10,'2019-10-09','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,10);
+insert into appointment values (11,'2019-10-10','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,11);
+insert into appointment values (12,'2019-10-12','Cedar Rapids', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',3, 3,12);
+insert into appointment values (13,'2019-10-13','Iowa City', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',4, 3,13);
+insert into appointment values (14,'2019-10-14','Burllington', 'IA', 'US', '1000 N 4th st', '52557',  '9:10',5, 3,14);
+insert into appointment values (15,'2019-10-15','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '10:10',5, 3,15);
+insert into appointment values (16,'2019-10-15','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '8:10',5, 3,16);
+insert into appointment values (17,'2019-10-16','fairfield', 'IA', 'US', '1000 N 4th st', '52557',  '7:10',5, 3,17);
+
+
+
+insert into users values (1, 'johndoe@gmail.com','John','M','Doe');
+insert into users values (2,'cat@gmail.com','Cath', 'F','Doe');
+insert into users values (3,'markphil@gmail.com', 'M','Mark','Phil');
+insert into users values (4,'marta@gmail.com', 'F','Mata','Phil');
+
+
+
+insert into reservation values (1,'PENDING',1,1,1);
+insert into reservation values (2,'CANCELED',2,2,2);
+insert into reservation values (3,'PENDING',3,3,3);
+insert into reservation values (4,'PENDING',3,2,4);
+insert into reservation values (5,'CANCELED',5,5,5);
+insert into reservation values (6,'PENDING',5,6,6);
+insert into reservation values (7,'PENDING',5,2,7);
+insert into reservation values (8,'PENDING',5,6,8);
+insert into reservation values (9,'PENDING',2,1,9);
+insert into reservation values (10,'APPROVED',4,2,10);
+insert into reservation values (11,'PENDING',5,3,11);
+insert into reservation values (12,'PENDING',5,8,12);
+insert into reservation values (13,'APPROVED',6,8,13);
+insert into reservation values (14,'PENDING',5,8,14);
+insert into reservation values (15,'PENDING',10,8,15);
+insert into reservation values (16,'PENDING',5,8,16);
+insert into reservation values (17,'APPROVED',3,8,17);
+insert into reservation values (18,'PENDING',5,8,18);
+insert into reservation values (19,'PENDING',4,8,19);
+insert into reservation values (20,'PENDING',5,8,20);
+insert into reservation values (21,'APPROVED',6,8,21);
+insert into reservation values (22,'PENDING',5,8,22);
+insert into reservation values (23,'PENDING',7,8,23);
+insert into reservation values (24,'CANCELED',5,8,14);
+
+
+
+
+
+
+
