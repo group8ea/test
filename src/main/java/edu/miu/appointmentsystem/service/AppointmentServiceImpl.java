@@ -1,0 +1,90 @@
+package edu.miu.appointmentsystem.service;
+
+
+import edu.miu.appointmentsystem.domain.Appointment;
+import edu.miu.appointmentsystem.domain.Category;
+import edu.miu.appointmentsystem.domain.Reservation;
+import edu.miu.appointmentsystem.domain.User;
+import edu.miu.appointmentsystem.domain.enums.AppointmentStatus;
+import edu.miu.appointmentsystem.dto.UserAdapter;
+import edu.miu.appointmentsystem.dto.UserDTO;
+import edu.miu.appointmentsystem.repository.AppointmentRepository;
+import edu.miu.appointmentsystem.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+
+@Service
+public class AppointmentServiceImpl implements AppointmentService {
+
+    @Autowired
+    AppointmentRepository appointmentRepository;
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    private UserServiceImpl userServiceImpl ;
+
+    @Autowired
+    private CategoryServiceImpl categoryService ;
+
+    @Override
+    public List<Appointment> getAppointments() {
+        return appointmentRepository.findAll();
+    }
+
+    @Override
+    public Appointment getAppointmentById(Integer appointmentId) {
+        return appointmentRepository.findById(appointmentId).orElse(null);
+    }
+
+    @Override
+    public Appointment addAppointment(Appointment appointment, Integer categoryId) {
+        Category category = categoryService.getCategoryById(categoryId);
+        appointment.setCategory(category);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDTO userDTO = userServiceImpl.findByUsername(authentication.getName());
+        UserAdapter adapter = new UserAdapter();
+        appointment.setProvider(adapter.getUser(userDTO));
+        return appointmentRepository.save(appointment);
+    }
+
+    @Override
+    public Appointment updateAppointment(Appointment appointment) {
+        return appointmentRepository.save(appointment);
+    }
+    @Override
+    public void deleteAppointment(Integer id) {
+        appointmentRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Appointment> getAllAppointmentByProviderId(Integer id) {
+        User user = userRepository.findById(id).orElse(null);
+        if(user != null)
+            return userRepository.findById(id).get().getAppointments();
+        return null;
+    }
+
+    @Override
+    public boolean cancelAppointment(Appointment appointment) {
+        if (appointment.getReservations().size() == 0) {
+            appointment.setStatus(AppointmentStatus.CANCELED);
+            appointmentRepository.save(appointment);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void closeAppointment(Appointment appointment) {
+        appointment.setStatus(AppointmentStatus.CLOSED);
+        appointmentRepository.save(appointment);
+    }
+
+
+}
