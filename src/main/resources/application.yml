@@ -16,7 +16,7 @@ spring:
     show-sql: true
     generation-ddl: true
     hibernate:
-#      ddl-auto: create-drop
+      ddl-auto: create-drop
     database: postgresql
   sql:
     init:
